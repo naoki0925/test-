@@ -1,6 +1,6 @@
 <h2>Log in</h2>
 
-<%= form_with model: @user, url: user_session_path, local: true do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
@@ -19,7 +19,7 @@
   <% end %>
 
   <div class="actions">
-    <input type="submit" name="commit" value="Log in" class="btn btn-sm btn-primary" data-disable-with="Log in">
+    <%= f.submit "Log in" %>
   </div>
 <% end %>
 
