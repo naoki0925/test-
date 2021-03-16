@@ -32,6 +32,9 @@
               <li>
                 <%= link_to "logout", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link text-light" %>
               </li>
+              <li>
+                <%= link_to "退会", unsubscribe_path, class: "fas fa-sign-out-alt nav-link text-light" %>
+              </li>
               <% else %>
               <li>
                 <%= link_to "Home", root_path, class: "fas fa-home nav-link text-light" %>

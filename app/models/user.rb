@@ -25,6 +25,11 @@ class User < ApplicationRecord
 
          has_many :user_rooms
          has_many :chats
+         
+         # is_deletedがfalseならtrueを返すようにしている
+         def active_for_authentication?
+           super && (is_deleted == false)
+         end
 
         def follow(user_id)
          relationships.create(followed_id: user_id)
